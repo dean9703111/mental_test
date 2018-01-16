@@ -44,87 +44,39 @@
         /*$("#main_png").animate({ opacity: 0 }, 1000);
         $("#" + img_name + "_png").animate({ opacity: 1 }, 1000);*/
         $("button").attr("disabled", "disabled");
-        $(function () {
-            var $show = $('#show'),
-                led, x, y, z,
-                a = 0,
-                shak_threshold = 2000,
-                last_update = 0,
-                last_x = 0,
-                last_y = 0,
-                last_z = 0;
 
-            if (window.DeviceMotionEvent) {
-                window.addEventListener('devicemotion', function (event) {
-                    var acceleration = event.accelerationIncludingGravity;
-                    var curTime = new Date().getTime(); //獲取當前時間
-                    if ((curTime - last_update) > 100) {
-                        //設定間隔時間，避免短時間的內的晃動干擾
-                        var diffTime = curTime - last_update;
-                        last_update = curTime;
-                        x = Math.round(acceleration.x);
-                        y = Math.round(acceleration.y);
-                        z = Math.round(acceleration.z);
-                        //計算晃動速度
-                        var speed = Math.abs((x + y + z - last_x - last_y - last_z)) / diffTime * 10000;
-                        if (speed > shak_threshold && a < 1) {
-                            a = 1;
-                            alert("TEST")
-                        }
+        var $show = $('#show'),
+            led, x, y, z,
+            a = 0,
+            shak_threshold = 2000,
+            last_update = 0,
+            last_x = 0,
+            last_y = 0,
+            last_z = 0;
+
+        if (window.DeviceMotionEvent) {
+            window.addEventListener('devicemotion', function (event) {
+                var acceleration = event.accelerationIncludingGravity;
+                var curTime = new Date().getTime(); //獲取當前時間
+                if ((curTime - last_update) > 100) {
+                    //設定間隔時間，避免短時間的內的晃動干擾
+                    var diffTime = curTime - last_update;
+                    last_update = curTime;
+                    x = Math.round(acceleration.x);
+                    y = Math.round(acceleration.y);
+                    z = Math.round(acceleration.z);
+                    //計算晃動速度
+                    var speed = Math.abs((x + y + z - last_x - last_y - last_z)) / diffTime * 10000;
+                    if (speed > shak_threshold && a < 1) {
+                        a = 1;
+                        alert("TEST")
                     }
+                }
 
-                });
+            });
+        }
 
-
-
-/*
-                var myShakeEvent = new Shake({
-                    threshold: 15
-                });
-
-                myShakeEvent.start();
-
-                window.addEventListener('shake', shakeEventDidOccur, false);
-
-                function shakeEventDidOccur() {
-                    alert("TEST")
-                    $("#main_png").animate({ opacity: 0 }, 1500);
-                        $("#" + img_name + "_png").animate({ opacity: 1 }, 1500);                
-                }*/
-
-
-                /*
-                        var tmp=0
-                        var one=0;
-                        if(window.DeviceOrientationEvent) {//陀螺儀
-                            window.addEventListener('deviceorientation', function(event) {
-                                var    alpha = event.alpha,
-                                        beta = event.beta,
-                                        gamma = event.gamma;
-                                var count = document.getElementById("count");
-                                tmp += alpha + beta + gamma
-                                count.innerHTML = Math.round(tmp)
-                
-                                if(tmp>20000 && one==0){
-                                    one++
-                                    alert("START")
-                                    $("#main_png").animate({ opacity: 0 }, 1500);
-                                    $("#" + img_name + "_png").animate({ opacity: 1 }, 1500);
-                                    alert("END")
-                                }
-                                var count = document.getElementById("count");
-                                tmp += alpha + beta + gamma
-                                count.innerHTML = Math.round(tmp)
-                                var tmp_count = tmp/50000;
-                                while(tmp_count<=1){
-                                    $("#main_png").animate({ opacity: 1-tmp_count }, 1000);
-                                    $("#" + img_name + "_png").animate({ opacity: 0+tmp_count }, 1000);
-                                }
-                            }, false);
-                        }else{
-                            document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-                        }*/
-            }
+    }
 </script>
 
 </html>
