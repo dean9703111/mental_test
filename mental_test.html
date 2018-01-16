@@ -44,9 +44,10 @@
                 var count = document.getElementById("count");
                 tmp += alpha + beta + gamma
                 count.innerHTML = Math.round(tmp)
-                if (tmp > 100) {
-                    $("#main_png").animate({ opacity: 0 }, 1000);
-                    $("#" + img_name + "_png").animate({ opacity: 1 }, 1000);
+                var tmp_count = count/50000;
+                while(tmp_count<=1){
+                    $("#main_png").animate({ opacity: 1-tmp_count }, 1000);
+                    $("#" + img_name + "_png").animate({ opacity: 0+tmp_count }, 1000);
                 }
             }, false);
         }else{
