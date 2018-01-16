@@ -35,6 +35,7 @@
         $("button").attr("disabled", "disabled");
         
         var tmp=0
+        var one=0;
         if(window.DeviceOrientationEvent) {//陀螺儀
             window.addEventListener('deviceorientation', function(event) {
                 var    alpha = event.alpha,
@@ -43,9 +44,12 @@
                 var count = document.getElementById("count");
                 tmp += alpha + beta + gamma
                 count.innerHTML = Math.round(tmp)
-                while(tmp>20000){
+
+                if(tmp>20000 && one==0){
+                    one++
                     $("#main_png").animate({ opacity: 0 }, 1500);
                     $("#" + img_name + "_png").animate({ opacity: 1 }, 1500);
+                    break;
                 }
                 /*var count = document.getElementById("count");
                 tmp += alpha + beta + gamma
