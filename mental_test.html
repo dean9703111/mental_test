@@ -41,8 +41,7 @@
 <script src="js/shake.js"></script>
 <script>
     function change_img(img_name) {
-        /*$("#main_png").animate({ opacity: 0 }, 1000);
-        $("#" + img_name + "_png").animate({ opacity: 1 }, 1000);*/
+        
         $("button").attr("disabled", "disabled");
 
         var $show = $('#show'),
@@ -69,7 +68,8 @@
                     var speed = Math.abs((x + y + z - last_x - last_y - last_z)) / diffTime * 10000;
                     if (speed > shak_threshold && a < 1) {
                         a = 1;
-                        alert("TEST")
+                        $("#main_png").animate({ opacity: 0 }, 1000);
+                        $("#" + img_name + "_png").animate({ opacity: 1 }, 1000);
                     }
                 }
 
