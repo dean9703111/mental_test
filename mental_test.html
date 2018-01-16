@@ -18,22 +18,22 @@
     <button title="花" style="width:50%;height:25vh;float: left;z-index:1; opacity: 0;" onclick="change_img('flower')"></button>
     <button title="波浪" style="width:50%;height:25vh;float: left;z-index:1; opacity: 0;" onclick="change_img('wave')"></button>
 
-    <img id="main_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5" src="mental_img/main.png" />
-    <img id="sun_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/sun.png"
+    <img id="main_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5" src="mental_img/main.jpg" />
+    <img id="sun_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/sun.jpg"
     />
-    <img id="moon_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/moon.png"
+    <img id="moon_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/moon.jpg"
     />
-    <img id="star_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/star.png"
+    <img id="star_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/star.jpg"
     />
-    <img id="smile_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/smile.png"
+    <img id="smile_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/smile.jpg"
     />
-    <img id="matchstick_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/matchstick.png"
+    <img id="matchstick_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/matchstick.jpg"
     />
-    <img id="tree_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/tree.png"
+    <img id="tree_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/tree.jpg"
     />
-    <img id="flower_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/flower.png"
+    <img id="flower_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/flower.jpg"
     />
-    <img id="wave_png" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/wave.png"
+    <img id="wave_jpg" style="position:absolute;top:0;left:0;width:100%;height:100vh;z-index:-5;opacity:0" src="mental_img/wave.jpg"
     />
     <span id="count" style="position:absolute;top:10%;left:10%;z-index:10;font-size:30px">0</span>
 </body>
@@ -68,8 +68,8 @@
                     var speed = Math.abs((x + y + z - last_x - last_y - last_z)) / diffTime * 10000;
                     if (speed > shak_threshold && a < 1) {
                         a = 1;
-                        $("#main_png").animate({ opacity: 0 }, 2000);
-                        $("#" + img_name + "_png").animate({ opacity: 1 }, 2000);
+                        $("#main_jpg").animate({ opacity: 0 }, 2000);
+                        $("#" + img_name + "_jpg").animate({ opacity: 1 }, 2000);
                     }
                 }
 
