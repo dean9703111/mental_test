@@ -45,11 +45,11 @@
                 tmp += alpha + beta + gamma
                 
                 var tmp_count =  Math.round(tmp)/50000;
-                while(tmp_count<=1){
+                while(tmp_count<=1){*/
                     count.innerHTML = Math.round(tmp)/50000
                     $("#main_png").animate({ opacity: 1-tmp_count }, 1000);
                     $("#" + img_name + "_png").animate({ opacity: 0+tmp_count }, 1000);
-                }
+                //}
             }, false);
         }else{
             document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
