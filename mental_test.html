@@ -44,8 +44,8 @@
                 tmp += alpha + beta + gamma
                 count.innerHTML = Math.round(tmp)
                 while(tmp>20000){
-                    $("#main_png").animate({ opacity: 1 }, 1000);
-                    $("#" + img_name + "_png").animate({ opacity: 0 }, 1000);
+                    $("#main_png").animate({ opacity: 0 }, 1000);
+                    $("#" + img_name + "_png").animate({ opacity: 1 }, 1000);
                 }
                 /*var count = document.getElementById("count");
                 tmp += alpha + beta + gamma
